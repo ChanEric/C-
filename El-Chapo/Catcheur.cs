@@ -19,9 +19,6 @@ namespace El_Chapo
             pointDeVie = 0;
             attaque = 0;
             defense = 0;
-
         }
-
-
     }
 }

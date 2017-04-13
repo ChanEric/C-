@@ -12,7 +12,6 @@ namespace El_Chapo
         {
             Console.WriteLine("**************************************************");
             Console.WriteLine("Bienvenue dans l'application El Chapo !");
-
         }
 
         public static void DisplayGoodBye()

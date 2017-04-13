@@ -17,32 +17,33 @@ namespace El_Chapo
             string choix_user;
             int nbr_choix_user;
 
+            //Affichage du menu
             Menus Principal_menu = new Menus();
             Menus.DisplayWelcome();
             Menus.ChoiceMainMenu();
 
+            // Test de l'entrée utilisateur : Si c'est pas bon je rappel la fonction et je raffiche le menu en lui disant qu'il s'est trompé... 
             choix_user = Console.ReadLine();
             bool parsed = int.TryParse(choix_user, out nbr_choix_user);
             if (!parsed)
             {
                 Console.WriteLine("Veuillez rentrer un nombre correspondant au menu s'il vous plaît !\n");
                 GetUserChoice();
-                return(0);
+                return (0);
             }
+            //Sinon on applique le choix utilisateur au switch grâce à la fonction 'The_choice'
             else
-            {
-                The_choice(nbr_choix_user);
-            }
+                TheChoice(nbr_choix_user);
             return (nbr_choix_user);
         }
 
-        public static void The_choice(int nbr_choixUser)
+        //Fonction qui applique le choix de l'utilisateur sur notre menu et qui le redirige selon son choix.
+        public static void TheChoice(int nbr_choixUser)
         {
             switch (nbr_choixUser)
             {
                 case 1:
                     Console.WriteLine("Vous avez selectionné : Créer un match !");
-                    //Thread.Sleep(TimeSpan.FromSeconds(1));
                     return;
                 case 2:
                     Console.WriteLine("Vous avez selectionné : Consulter l'historique des matchs!");
@@ -56,28 +57,29 @@ namespace El_Chapo
                     break;
                 default:
                     Console.WriteLine(" Veuillez rentrer le bon nombre ! \n");
-                    Thread.Sleep(TimeSpan.FromSeconds(2));
-                    //first_menu();
+                    Thread.Sleep(TimeSpan.FromSeconds(1));
+                    TheChoice(nbr_choixUser);
                     break;
             }
         }
 
+        //Fonction qui demande à l'utilisateur s'il veut réélement quitter l'appli.
         public static void Confirmation()
         {
             string ok;
             Console.WriteLine("Voulez vous vraiment quitter l'application ?\n");
-            Console.WriteLine("Tapez 'Y' pour confirmer, 'N' pour rester\n");
+            Console.WriteLine("Tapez 'Y' pour quitter définitivement, 'N' pour retourner au menu\n");
             ok = Console.ReadLine();
 
-            if (ok == "Y")
+            if (ok == "Y" || ok == "y")
             {
                 Menus.DisplayGoodBye();
                 Console.WriteLine("Appuyez sur n'importe quelle touche pour quitter.");
                 Console.Read();
             }
-            else if (ok == "N")
+            else if (ok == "N" || ok == "n")
             {
-                Console.WriteLine("Vous avez cliqué sur 'Non'. Retour au menu.\n");
+                Console.WriteLine("Vous avez choisi 'Non'. Retour au menu.\n");
                 GetUserChoice();
             }
             else

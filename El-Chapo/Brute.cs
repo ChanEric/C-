@@ -9,17 +9,12 @@ namespace El_Chapo
     class Brute : Catcheur
     {
 
-        public override void Competence()   {
-
+        public override void Competence()
+        {
             attaque = 5;
             defense = 1;
             pointDeVie = 125;
             Console.WriteLine("Vie{0}, def{1} atq{2}", pointDeVie, defense, attaque);
-        
-
         }
-
-
-
     }
 }
