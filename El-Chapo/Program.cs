@@ -11,8 +11,9 @@ namespace El_Chapo
         static void Main(string[] args)
         {
 
-            Brute brute1 = new Brute();
-            brute1.Competence();
+            Saisons Menu1 = new Saisons();
+            Saisons.DisplayWelcome();
+            Saisons.ChoiceMainMenu();
 
         }
     }
