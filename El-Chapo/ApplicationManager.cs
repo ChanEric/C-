@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace El_Chapo
 {
     // Classe globale pour avoir accès à ces fonctions qui sont utilisées seulement pour le choix utilisateur.
-    class Globals
+    class ApplicationManager
     {
 
         // Fonction qui récupère seulement le choix utilisateur avec gestion d'erreur au cas où il ne selectionne pas un nombre ou pas le bon.

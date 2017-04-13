@@ -49,10 +49,11 @@
     <Compile Include="Combat.cs" />
     <Compile Include="CreationCombat.cs" />
     <Compile Include="GestionCatcheur.cs" />
+    <Compile Include="ApplicationManager.cs" />
     <Compile Include="Match.cs" />
+    <Compile Include="Menus.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Saisons.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

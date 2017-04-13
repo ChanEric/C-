@@ -10,11 +10,7 @@ namespace El_Chapo
     {
         static void Main(string[] args)
         {
-
-            Saisons Menu1 = new Saisons();
-            Saisons.DisplayWelcome();
-            Saisons.ChoiceMainMenu();
-
+            ApplicationManager.GetUserChoice();
         }
     }
 }
