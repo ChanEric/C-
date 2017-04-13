@@ -14,7 +14,7 @@ namespace El_Chapo
             Saisons Menu1 = new Saisons();
             Saisons.DisplayWelcome();
             Saisons.ChoiceMainMenu();
-
+            Console.WriteLine("coucou");
         }
     }
 }
