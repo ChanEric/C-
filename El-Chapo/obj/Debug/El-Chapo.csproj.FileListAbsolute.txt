@@ -1,0 +1,9 @@
+D:\Document\Visual Studio 2015\Projects\El-Chapo\El-Chapo\bin\Debug\El-Chapo.exe.config
+D:\Document\Visual Studio 2015\Projects\El-Chapo\El-Chapo\bin\Debug\El-Chapo.exe
+D:\Document\Visual Studio 2015\Projects\El-Chapo\El-Chapo\bin\Debug\El-Chapo.pdb
+D:\Document\Visual Studio 2015\Projects\El-Chapo\El-Chapo\obj\Debug\El-Chapo.csprojResolveAssemblyReference.cache
+D:\Document\Visual Studio 2015\Projects\El-Chapo\El-Chapo\obj\Debug\El-Chapo.exe
+D:\Document\Visual Studio 2015\Projects\El-Chapo\El-Chapo\obj\Debug\El-Chapo.pdb
+D:\Document\Ynov\WEB\MonApp\El-Chapo\C-\El-Chapo\bin\Debug\El-Chapo.exe.config
+D:\Document\Ynov\WEB\MonApp\El-Chapo\C-\El-Chapo\obj\Debug\El-Chapo.exe
+D:\Document\Ynov\WEB\MonApp\El-Chapo\C-\El-Chapo\obj\Debug\El-Chapo.pdb
