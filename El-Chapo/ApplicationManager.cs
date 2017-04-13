@@ -58,7 +58,7 @@ namespace El_Chapo
                 default:
                     Console.WriteLine(" Veuillez rentrer le bon nombre ! \n");
                     Thread.Sleep(TimeSpan.FromSeconds(1));
-                    TheChoice(nbr_choixUser);
+                    GetUserChoice();
                     break;
             }
         }
