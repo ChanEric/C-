@@ -8,42 +8,69 @@ namespace El_Chapo
 {
     public class ListCatcheurs
     {
-        public void ListOfCatcheur()
+        public List<Catcheur> TheListOfCatcheur;
+
+        public ListCatcheurs()
         {
-            List<Catcheur> TheListOfCatcheur = new List<Catcheur>();
-            TheListOfCatcheur.Add(new Catcheur());
+            TheListOfCatcheur = new List<Catcheur>
+            {
+                new Brute("L'ordonnateur des pompes funèbres", StatutCatcheur.Disponible),
+                new Agile("Triple hache", StatutCatcheur.Disponible),
+                new Agile("Dead poule", StatutCatcheur.Disponible),
+                new Brute("Judy Sunny", StatutCatcheur.Disponible),
+                new Brute("Jarvan cinquième du nom", StatutCatcheur.Convalescence),
+                new Agile("Madusa", StatutCatcheur.Disponible),
+                new Agile("John Cinéma", StatutCatcheur.Convalescence),
+                new Brute("Jeff Radis", StatutCatcheur.Convalescence),
+                new Brute("Raie Mystérieuse", StatutCatcheur.Disponible),
+                new Brute("Chris Hart", StatutCatcheur.Disponible),
+                new Agile("John Cinéma", StatutCatcheur.Convalescence),
+            };
+        }
+
+        public void DisplayListOfCatcheur()
+        {
+            foreach (Catcheur i in TheListOfCatcheur)
+            {
+                Console.WriteLine("Nom du catcheur : " + i.name);  
+                Console.WriteLine("PV = " + i.pointDeVie);
+                Console.WriteLine("points d'attaque = " + i.attaque);
+                Console.WriteLine("points de defence = " + i.defense);
+                Console.WriteLine("\n");
+            }
         }
     }
-
-    class JudySunny : Brute
+}
+/*    class JudySunny : Brute
     {
         String name = "Judy Sunny";
 
         String SpeCompentence = "40% de chance de regagner 5 points de vie (ne peux depasser la vie max), 60% de chance de parer 1 point de dégât supplémentaire.";
-        String Statut = "Operationnel";
+        String Statut = "Disponible";
 
         public override void Competence()
         {
             Random pourcentageDeChance1 = new Random();
-            int rndPourcentage = pourcentageDeChance1.Next();
+            int rndPourcentage = pourcentageDeChance1.Next(0, 9);
 
             if (rndPourcentage <= 3)
             {
                 int augmentationPointDeVie = 5;
                 int i = 0;
 
-                while (i <= pointDeVie)
+                while (i <= augmentationPointDeVie)
                 {
-                    if (i == 100)
+                    if ((i + pointDeVie) == 100)
                     {
-                        Console.WriteLine("Points de vie au mximum")
+                        pointDeVie = pointDeVie + i;
+                        Console.WriteLine("Points de vie au mximum");
                     }
-                }
-                Console.WriteLine("Points de vie au maximum");
-                return;
-                else
-                {
-                    pointDeVie = pointDeVie + 5;
+                    else if (i == augmentationPointDeVie)
+                    {
+                        Console.WriteLine("Capacité spéciale éffectuée ! +5 points de vie à votre personnage !");
+                    }
+                    else
+                        i++;
                 }
             }
             else
@@ -52,10 +79,8 @@ namespace El_Chapo
                 return;
             }
 
-            Random pourcentageDeChance2 = new Random();
-            int rndPourcentage2 = pourcentageDeChance2.Next();
-
-            if (rndPourcentage2 <= 5)
+            rndPourcentage = pourcentageDeChance1.Next(0, 9);
+            if (rndPourcentage <= 5)
             {
                 // Ont doit parer 1 dégât
             }
@@ -70,7 +95,7 @@ namespace El_Chapo
     class Triplehache : Agile
     {
         String SpeCompentence = "20% de chance d’infliger 2 dégâts supplémentaires mais perd alors 1 point de vie";
-        String Statut = "Operationnel";
+        String Statut = "Disponible";
 
 
         public override void Competence()
@@ -78,15 +103,52 @@ namespace El_Chapo
 
         }
     }
+
     class Deadpoule : Agile
     {
         String SpeCompentence = "10% de chance de subtiliser 3 pvs de l’ennemie en plus de l’attaque, 30% de chances de se soigner de 2 pvs et 10% de chances de parer 1 dégat";
-        String Statut = "Operationnel";
+        String Statut = "Disponible";
 
 
         public override void Competence()
         {
+            Random pourcentageDeChance1 = new Random();
+            int rndPourcentage = pourcentageDeChance1.Next(0, 9);
 
+            if (rndPourcentage == 0)
+            {
+                Console.WriteLine("Capacité spéciale éffectuée ! Subtilisation de 3pvs en plus sur votre attaque !");
+                attaque = attaque + 3;
+            }
+            else
+            {
+                Console.WriteLine("Capacité échouée !");
+                return;
+            }
+
+            rndPourcentage = pourcentageDeChance1.Next(0, 9);
+            if (rndPourcentage <= 2)
+            {
+                Console.WriteLine("Capacité spéciale éffectuée ! Vous vous êtes soignés de 2pvs !");
+                pointDeVie = pointDeVie + 2;
+            }
+            else
+            {
+                Console.WriteLine("Capacité échouée !");
+                return;
+            }
+
+            rndPourcentage = pourcentageDeChance1.Next(0, 9);
+            if (rndPourcentage == 0)
+            {
+                Console.WriteLine("Capacité spéciale éffectuée ! Vous parez 1 dégât en plus !");
+                //parer un dégat !
+            }
+            else
+            {
+                Console.WriteLine("Capacité échouée !");
+                return;
+            }
         }
     }
     class Jarvan5DuNom : Brute
@@ -103,12 +165,23 @@ namespace El_Chapo
     class Madusa : Agile
     {
         String SpeCompentence = "40% de chance de se protéger contre 4 points de dégâts, mais n’en inflige qu’un seul durant le tour.";
-        String Statut = "Operationnel";
+        String Statut = "Disponible";
 
 
         public override void Competence()
         {
+            Random pourcentageDeChance1 = new Random();
+            int rndPourcentage = pourcentageDeChance1.Next(0, 9);
 
+            if (rndPourcentage <= 3)
+            {
+
+            }
+            else
+            {
+                Console.WriteLine("Capacité échouée !");
+                return;
+            }
         }
     }
     class JohnCinema : Agile
@@ -136,7 +209,7 @@ namespace El_Chapo
     class RaieMysterieuse : Brute
     {
         String SpeCompentence = "40% de chance de s’infliger 3 dégâts, sinon inflige 1 dégât supplémentaire et se protège de 2 dégâts infligés";
-        String Statut = "Operationnel";
+        String Statut = "Disponible";
 
 
         public override void Competence()
@@ -147,7 +220,7 @@ namespace El_Chapo
     class ChrisHart : Brute
     {
         String SpeCompentence = "30% de chance d’annuler une attaque";
-        String Statut = "Operationnel";
+        String Statut = "Disponible";
 
 
         public override void Competence()
@@ -158,7 +231,7 @@ namespace El_Chapo
     class BretBenoit : Agile
     {
         String SpeCompentence = "8% de chance de mettre instantanément K.O l’adversaire";
-        String Statut = "Operationnel";
+        String Statut = "Disponible";
 
 
         public override void Competence()
@@ -168,3 +241,4 @@ namespace El_Chapo
     }
 
 }
+*/

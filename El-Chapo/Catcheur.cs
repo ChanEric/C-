@@ -6,23 +6,26 @@ using System.Threading.Tasks;
 
 namespace El_Chapo
 {
-    class Catcheur
+    public enum StatutCatcheur
     {
+        Disponible,
+        Convalescence,
+        HorsEtat,
+    }
 
-        public int pointDeVie;
-        public int attaque;
-        public int defense;
+    public class Catcheur
+    {
+        public String name { get; set; }
+        public int pointDeVie { get; set; }
+        public int attaque { get; set; }
+        public int defense { get; set; }
 
-        public int ComSpePointDeVie;
-        public int ComSpeAttaque;
-        public int ComSpeDefense;
-
-
-        public virtual void Competence()
+        public Catcheur(string Name, int pdv, int att, int def)
         {
-            pointDeVie = 0;
-            attaque = 0;
-            defense = 0;
+            name = Name;
+            pointDeVie = pdv;
+            attaque = att;
+            defense = def;
         }
     }
 }

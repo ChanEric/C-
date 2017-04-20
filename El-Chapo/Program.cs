@@ -10,7 +10,7 @@ namespace El_Chapo
     {
         static void Main(string[] args)
         {
-            ApplicationManager.GetUserChoice();
+            Luncher.GetUserChoice();
         }
     }
 }

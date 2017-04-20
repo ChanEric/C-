@@ -8,12 +8,9 @@ namespace El_Chapo
 {
     class Agile : Catcheur
     {
-        public override void Competence()
+        public Agile(String Nom, StatutCatcheur statut) : base(Nom, 125, 3, 3)
         {
-            attaque = 3;
-            defense = 3;
-            pointDeVie = 125;
-            Console.WriteLine("Vie{0}, def{1} atq{2}", pointDeVie, defense, attaque);
+
         }
     }
 }

@@ -8,13 +8,9 @@ namespace El_Chapo
 {
     class Brute : Catcheur
     {
-
-        public override void Competence()
+        public Brute(String Nom, StatutCatcheur statut) : base(Nom, 100, 5, 1)
         {
-            attaque = 5;
-            defense = 1;
-            pointDeVie = 100;
-            Console.WriteLine("Vie{0}, def{1} atq{2}", pointDeVie, defense, attaque);
+
         }
     }
 }
