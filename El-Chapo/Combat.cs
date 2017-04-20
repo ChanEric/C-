@@ -8,5 +8,6 @@ namespace El_Chapo
 {
     class Combat
     {
+        //rappel de la fonction theChoiceOfCatcheur()
     }
 }

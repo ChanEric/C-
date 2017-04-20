@@ -10,17 +10,31 @@ namespace El_Chapo
     // Classe globale pour avoir accès à ces fonctions qui sont utilisées seulement pour le choix utilisateur.
     class Luncher
     {
+        ListCatcheurs _catcheurs;
 
-        // Fonction qui récupère seulement le choix utilisateur avec gestion d'erreur au cas où il ne selectionne pas un nombre ou pas le bon.
-        public static int GetUserChoice()
+        public Luncher()
         {
-            string choix_user;
-            int nbr_choix_user;
+            _catcheurs = new ListCatcheurs();
+        }
+
+
+        public void Start()
+        {
 
             //Affichage du menu
             Menus Principal_menu = new Menus();
             Menus.DisplayWelcome();
             Menus.ChoiceMainMenu();
+
+            GetUserChoice();
+        }
+
+        // Fonction qui récupère seulement le choix utilisateur avec gestion d'erreur au cas où il ne selectionne pas un nombre ou pas le bon.
+        public int GetUserChoice()
+        {
+            string choix_user;
+            int nbr_choix_user;
+
 
             // Test de l'entrée utilisateur : Si c'est pas bon je rappel la fonction et je raffiche le menu en lui disant qu'il s'est trompé... 
             choix_user = Console.ReadLine();
@@ -38,23 +52,24 @@ namespace El_Chapo
         }
 
         //Fonction qui applique le choix de l'utilisateur sur notre menu et qui le redirige selon son choix.
-        public static void TheChoice(int nbr_choixUser)
+        public void TheChoice(int nbr_choixUser)
         {
             switch (nbr_choixUser)
             {
                 case 1:
                     Console.WriteLine("Vous avez selectionné : Créer un match !");
-                    RetourMenu();
+                    Combat combat = new Combat(_catcheurs);//Pour toi guillian : 
+                    ReturnMenu();
                     return;
                 case 2:
                     Console.WriteLine("Vous avez selectionné : Consulter l'historique des matchs!");
-                    RetourMenu();
+                    ReturnMenu();
                     break;
                 case 3:
-                    Console.WriteLine("Vous avez selectionné : Consulter la base des contacts!");
+                    Console.WriteLine("Vous avez selectionné : Consulter la base des contacts! \n");
                     ListCatcheurs lunch = new ListCatcheurs();
                     lunch.DisplayListOfCatcheur();
-                    RetourMenu();
+                    ReturnMenu();
                     break;
                 case 4:
                     Console.WriteLine("Vous avez selectionné : Quitter le jeu!");
@@ -68,7 +83,7 @@ namespace El_Chapo
             }
         }
 
-        public static void RetourMenu()
+        public void ReturnMenu()
         {
             string ok;
             Console.WriteLine("Veuillez tapez 'Q' ou 'quit' pour retourner au menu : ");
@@ -81,12 +96,12 @@ namespace El_Chapo
             else
             {
                 Console.WriteLine("Veuillez choisir une des propositions en respectant la syntaxe 'Q', 'q' ou 'quit' pour retourner au menu.");
-                RetourMenu();
+                ReturnMenu();
                 return;
             }
         }
         //Fonction qui demande à l'utilisateur s'il veut réélement quitter l'appli.
-        public static void Confirmation()
+        public void Confirmation()
         {
             string ok;
             Console.WriteLine("Voulez vous vraiment quitter l'application ?\n");

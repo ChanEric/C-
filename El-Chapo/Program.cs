@@ -10,7 +10,9 @@ namespace El_Chapo
     {
         static void Main(string[] args)
         {
-            Luncher.GetUserChoice();
+            Luncher launcher = new Luncher();
+
+            launcher.Start();
         }
     }
 }

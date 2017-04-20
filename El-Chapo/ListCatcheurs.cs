@@ -30,8 +30,11 @@ namespace El_Chapo
 
         public void DisplayListOfCatcheur()
         {
+            int indexOfCatcheur = 1;
+
             foreach (Catcheur i in TheListOfCatcheur)
             {
+                Console.WriteLine($"{indexOfCatcheur++}.");
                 Console.WriteLine("Nom du catcheur : " + i.name);  
                 Console.WriteLine("PV = " + i.pointDeVie);
                 Console.WriteLine("points d'attaque = " + i.attaque);
