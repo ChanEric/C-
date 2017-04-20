@@ -58,8 +58,8 @@ namespace El_Chapo
             {
                 case 1:
                     Console.WriteLine("Vous avez selectionné : Créer un match !");
-                    Combat combat = new Combat(_catcheurs);//Pour toi guillian : 
-                    ReturnMenu();
+                    /*Combat combat = new Combat(_catcheurs);//Pour toi guillian : 
+                    ReturnMenu();*/
                     return;
                 case 2:
                     Console.WriteLine("Vous avez selectionné : Consulter l'historique des matchs!");

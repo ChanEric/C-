@@ -24,7 +24,7 @@ namespace El_Chapo
                 new Brute("Jeff Radis", StatutCatcheur.Convalescence),
                 new Brute("Raie Mystérieuse", StatutCatcheur.Disponible),
                 new Brute("Chris Hart", StatutCatcheur.Disponible),
-                new Agile("John Cinéma", StatutCatcheur.Convalescence),
+                new Agile("Bret Benoit", StatutCatcheur.Convalescence),
             };
         }
 
