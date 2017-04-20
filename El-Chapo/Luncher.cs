@@ -35,14 +35,13 @@ namespace El_Chapo
             string choix_user;
             int nbr_choix_user;
 
-
             // Test de l'entrée utilisateur : Si c'est pas bon je rappel la fonction et je raffiche le menu en lui disant qu'il s'est trompé... 
             choix_user = Console.ReadLine();
             bool parsed = int.TryParse(choix_user, out nbr_choix_user);
             if (!parsed)
             {
                 Console.WriteLine("Veuillez rentrer un nombre correspondant au menu s'il vous plaît !\n");
-                GetUserChoice();
+                Start();
                 return (0);
             }
             //Sinon on applique le choix utilisateur au switch grâce à la fonction 'The_choice'
@@ -78,7 +77,7 @@ namespace El_Chapo
                 default:
                     Console.WriteLine(" Veuillez rentrer le bon nombre ! \n");
                     Thread.Sleep(TimeSpan.FromSeconds(1));
-                    GetUserChoice();
+                    Start();
                     break;
             }
         }
@@ -91,7 +90,7 @@ namespace El_Chapo
 
             if (ok == "Q" || ok == "q" || ok == "quit")
             {
-                GetUserChoice();
+                Start();
             }
             else
             {
@@ -117,7 +116,7 @@ namespace El_Chapo
             else if (ok == "N" || ok == "n")
             {
                 Console.WriteLine("Vous avez choisi 'Non'. Retour au menu.\n");
-                GetUserChoice();
+                Start();
             }
             else
             {
