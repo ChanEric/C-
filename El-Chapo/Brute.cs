@@ -13,7 +13,7 @@ namespace El_Chapo
         {
             attaque = 5;
             defense = 1;
-            pointDeVie = 125;
+            pointDeVie = 100;
             Console.WriteLine("Vie{0}, def{1} atq{2}", pointDeVie, defense, attaque);
         }
     }

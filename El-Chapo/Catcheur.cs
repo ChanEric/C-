@@ -13,6 +13,10 @@ namespace El_Chapo
         public int attaque;
         public int defense;
 
+        public int ComSpePointDeVie;
+        public int ComSpeAttaque;
+        public int ComSpeDefense;
+
 
         public virtual void Competence()
         {
