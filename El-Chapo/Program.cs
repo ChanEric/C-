@@ -10,7 +10,7 @@ namespace El_Chapo
     {
         static void Main(string[] args)
         {
-            Luncher launcher = new Luncher();
+            Launcher launcher = new Launcher();
 
             launcher.Start();
         }

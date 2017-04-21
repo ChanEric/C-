@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 namespace El_Chapo
 {
     // Classe globale pour avoir accès à ces fonctions qui sont utilisées seulement pour le choix utilisateur.
-    class Luncher
+    class Launcher
     {
         ListCatcheurs _catcheurs;
 
-        public Luncher()
+        public Launcher()
         {
             _catcheurs = new ListCatcheurs();
         }

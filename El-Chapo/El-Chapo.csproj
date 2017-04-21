@@ -49,7 +49,7 @@
     <Compile Include="Combat.cs" />
     <Compile Include="CreationCombat.cs" />
     <Compile Include="GestionCatcheur.cs" />
-    <Compile Include="Luncher.cs" />
+    <Compile Include="Launcher.cs" />
     <Compile Include="ListCatcheurs.cs" />
     <Compile Include="Match.cs" />
     <Compile Include="Menus.cs" />

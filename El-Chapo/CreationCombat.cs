@@ -33,7 +33,7 @@ namespace El_Chapo
 
         public static void TheChoiceOfCatcheur(int nbr_choixUser)
         {
-            //Pour toi guillian tu traite une première fois le nrb_choixUser qui contient le numéro du catcheur 
+            //Pour toi guillian tu traite une première fois le nrb_choixUser qui contient le numéro du catcheur que l'utilisateur a choisi.
             // Tu extrait le catcheur voulu.
             // Tu rappel GetUserChoiceCatcheur
             // tu retraite une deuxieme fois le nbr_choixUser pour selectionner le deuxieme catcheur de la liste.
