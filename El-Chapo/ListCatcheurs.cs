@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace El_Chapo
 {
+    /// <ListCatcheurs>
+    /// Classe permettant de regrouper dans une liste, des Objets de type Brute ou Agile qui héritent tout deux de la classe Catcheur.
+    /// On créé donc tous les catcheurs en leur donnant un nom et un statut.
+    /// </ListCatcheurs>
     public class ListCatcheurs
     {
         public List<Catcheur> TheListOfCatcheur;

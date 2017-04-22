@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace El_Chapo
 {
-    // Classe globale pour avoir accès à ces fonctions qui sont utilisées seulement pour le choix utilisateur.
+    /// Classe globale pour avoir accès à ces fonctions qui sont utilisées seulement pour le choix utilisateur.
+    /// <Launcher>
+    /// Permet d'avoir accès à ma liste de catcheurs dès l'instant où je lance le programme.
+    /// </Launcher>
     class Launcher
     {
         ListCatcheurs _catcheurs;
@@ -17,20 +20,23 @@ namespace El_Chapo
             _catcheurs = new ListCatcheurs();
         }
 
-
+        /// <Start>
+        /// Fonction principale du programme. Elle permet l'affichage du menu principal ainsi que l'appel de la fonction GetUserChoice()
+        /// qui permet une première interaction avec les utilisateurs.
+        /// </Start>
         public void Start()
         {
-
-            //Affichage du menu
             Menus Principal_menu = new Menus();
             Menus.DisplayWelcome();
             Menus.ChoiceMainMenu();
 
-            GetUserChoice();
+            GetUserChoice(_catcheurs);
         }
 
-        // Fonction qui récupère seulement le choix utilisateur avec gestion d'erreur au cas où il ne selectionne pas un nombre ou pas le bon.
-        public int GetUserChoice()
+        /// <GetUserChoice>
+        /// Fonction qui récupère seulement le choix utilisateur avec gestion d'erreur au cas où il ne selectionne pas un nombre ou pas le bon.
+        /// </GetUserChoice>
+        public int GetUserChoice(ListCatcheurs maList)
         {
             string choix_user;
             int nbr_choix_user;
@@ -50,7 +56,12 @@ namespace El_Chapo
             return (nbr_choix_user);
         }
 
-        //Fonction qui applique le choix de l'utilisateur sur notre menu et qui le redirige selon son choix.
+
+        /// <TheChoice>
+        /// Fonction qui applique le choix de l'utilisateur sur notre menu et qui le redirige selon son choix. Prend en paramètre un entier correspondant au choix utilisateur,
+        /// ainsi que la liste des catcheurs.
+        /// <param name="nbr_choixUser"></param>
+        /// </TheChoice>
         public void TheChoice(int nbr_choixUser)
         {
             switch (nbr_choixUser)
@@ -66,8 +77,7 @@ namespace El_Chapo
                     break;
                 case 3:
                     Console.WriteLine("Vous avez selectionné : Consulter la base des contacts! \n");
-                    ListCatcheurs lunch = new ListCatcheurs();
-                    lunch.DisplayListOfCatcheur();
+                    _catcheurs.DisplayListOfCatcheur();
                     ReturnMenu();
                     break;
                 case 4:
@@ -82,6 +92,9 @@ namespace El_Chapo
             }
         }
 
+        /// <ReturnMenu>
+        /// Fonction qui retourne au menu 
+        /// </ReturnMenu>
         public void ReturnMenu()
         {
             string ok;
@@ -94,12 +107,16 @@ namespace El_Chapo
             }
             else
             {
+                Console.WriteLine("\n");
                 Console.WriteLine("Veuillez choisir une des propositions en respectant la syntaxe 'Q', 'q' ou 'quit' pour retourner au menu.");
                 ReturnMenu();
                 return;
             }
         }
-        //Fonction qui demande à l'utilisateur s'il veut réélement quitter l'appli.
+
+        /// <Confirmation>
+        /// Fonction qui demande à l'utilisateur s'il veut réélement quitter l'appli.
+        /// </Confirmation>
         public void Confirmation()
         {
             string ok;

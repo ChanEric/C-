@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace El_Chapo
 {
+    /// <Saison>
+    /// Permet de créer une nouvelle saison et d'incrémenter les semaines et les saisons.
+    /// </Saison>
     public class Saison
     {
         public int saisonCompteur { get; set; }

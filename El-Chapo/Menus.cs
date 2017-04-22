@@ -6,12 +6,21 @@ using System.Threading.Tasks;
 
 namespace El_Chapo
 {
+    /// <Menus>
+    /// Classe permettant l'affichage des dfférentes parties composant le menu.
+    /// </Menus>
     class Menus
     {
         public static void DisplayWelcome()
         {
-            Console.WriteLine("**************************************************");
-            Console.WriteLine("Bienvenue dans l'application El Chapo !");
+            Console.WriteLine("***************************************************");
+            Console.WriteLine("*                                                 *");
+            Console.WriteLine("*                                                 *");
+            Console.WriteLine("*     Bienvenue dans l'application El Chapo !     *");
+            Console.WriteLine("*                                                 *");
+            Console.WriteLine("*                                                 *");
+            Console.WriteLine("***************************************************");
+            Console.WriteLine("\n");
         }
 
         public static void DisplayGoodBye()
